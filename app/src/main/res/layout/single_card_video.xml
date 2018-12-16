@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:gravity="center"
+    android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="1dp"
+    app:cardPreventCornerOverlap="false">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/custom_elevation_card_item"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fb_item_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:visibility="visible">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/fb_user_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                tools:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/fb_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textStyle="bold"
+                    tools:text="Eneim" />
+
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    tools:text="the simple, the best" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <FrameLayout
+                android:id="@+id/frPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.exoplayer2.ui.PlayerView
+                    android:id="@+id/playerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    app:default_artwork="@drawable/ic_launcher_background"
+                    app:resize_mode="fill"
+                    app:surface_type="surface_view"
+                    app:use_artwork="true"
+                    app:use_controller="false" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/img_preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/img_playback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="#80000000"
+                android:padding="8dp"
+                android:src="@drawable/selector_play_pause"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/img_vol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_margin="8dp"
+                android:background="#80000000"
+                android:padding="8dp"
+                android:src="@drawable/selector_mute_unmute" />
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_vol"
+                android:layout_gravity="right|bottom"
+                android:layout_margin="8dp"
+                android:background="#80000000"
+                android:padding="8dp"
+                android:text="buffering"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/over_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#cc000000"
+        android:visibility="gone" />
+</android.support.v7.widget.CardView>
